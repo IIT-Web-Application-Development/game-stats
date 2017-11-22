@@ -3,3 +3,11 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  each game in games
+    p #{game.sport}
+
+  form(method='POST' action='/games')
+      div.form-group
+        label(for='sport') Sport:
+        input#name.form-control(type='text', placeholder='football' name='sport')
+      button.btn.btn-primary(type='submit') Sign up
